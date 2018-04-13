@@ -1,10 +1,8 @@
 -- Homework Assignment
--- 1a. You need a list of all the actors who have 
-	-- Display the first and last names of all actors 
+-- 1a. Display the first and last names of all actors 
     -- from the table `actor`. 
 
 use sakila; 
-
 select first_name, last_name from actor;
 
 -- 1b. Display the first and last name of each actor in a 
@@ -208,7 +206,6 @@ address.city_id = city.city_id
 join country on 
 city.country_id = country.country_id; 
 
-
 -- 7h. List the top five genres in gross revenue in descending order. 
 -- (**Hint**: you may need to use the following tables: category, film_category, inventory, 
 -- payment, and rental.)
@@ -224,7 +221,6 @@ join payment on
 rental.rental_id = payment.rental_id 
 group by category.name
 order by sum(payment.amount) desc limit 5; 
-
 
 -- 8a. In your new role as an executive, you would like to have an easy way of 
 -- viewing the Top five genres by gross revenue. Use the solution from the problem 
@@ -249,4 +245,5 @@ select * from top_five;
 
 -- 8c. You find that you no longer need the view `top_five_genres`. 
 -- Write a query to delete it.
+
 drop view top_five; 
